@@ -7,16 +7,16 @@ const Rootlayout = () => {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: "#1A1209",
-        tabBarInactiveTintColor: "999999",
+        tabBarInactiveTintColor: "#999999",
         tabBarStyle: {
           position: "absolute", // Makes the tab bar float above content
-          bottom: Platform.OS === "android" ? 80 : 24, // More space on Android above nav buttons
+          bottom: Platform.OS === "android" ? 30 : 24, // More space on Android above nav buttons
           marginHorizontal: 30,
           alignSelf: "center",
           width: "auto",
           borderRadius: 20,
           height: 52,
-          backgroundColor: "#ffffff",
+          backgroundColor: "#68553a",
           borderTopWidth: 0,
 
           // Shadow for iOS
@@ -34,15 +34,16 @@ const Rootlayout = () => {
         tabBarItemStyle: {
           height: 54, // Centers the tab items vertically
         },
+        sceneStyle: { backgroundColor: "#F5EFE6" }, // Sets the background color for all screens
       }}
     >
       <Tabs.Screen
-        name="Home"
+        name="Today"
         options={{
           headerShown: false,
           tabBarIcon: ({ focused, color }) => (
             <Ionicons
-              name={focused ? "home" : "home-outline"}
+              name={focused ? "calendar" : "calendar-outline"}
               size={20}
               color={color}
             />
