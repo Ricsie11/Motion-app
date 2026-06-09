@@ -40,7 +40,7 @@ const RootLayout = () => {
   const [sortOrder, setSortOrder] = useState("newest");
   const [loaded, setLoaded] = useState(false);
 
-  // ✅ Load tasks from storage on mount
+
   useEffect(() => {
     const load = async () => {
       try {
@@ -59,7 +59,7 @@ const RootLayout = () => {
     load();
   }, []);
 
-  // ✅ Save tasks to storage whenever they change
+ 
   useEffect(() => {
     if (!loaded) return;
     const save = async () => {
