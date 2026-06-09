@@ -6,7 +6,7 @@ type Props = {
   backgroundColor?: string;
 };
 
-export default function RootLayout({ backgroundColor = "#121212" }: Props) {
+export default function RootLayout({ backgroundColor = "#b49566" }: Props) {
   return (
   
     <SafeAreaProvider style={{ flex: 1, backgroundColor }}>
