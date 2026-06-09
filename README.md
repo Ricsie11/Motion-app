@@ -1,56 +1,177 @@
-# Welcome to your Expo app 👋
+# DailyTask 🗓️
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+> **Your progress, conquered daily 💪**
 
-## Get started
+A clean, minimal daily task planner built with React Native and Expo. Add tasks, track progress, and stay on top of your day — one task at a time.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## Features
 
-2. Start the app
+- **Add Tasks** — quickly add tasks via the input bar or keyboard submit
+- **Toggle Completion** — mark tasks as done with a single tap
+- **Delete Tasks** — swipe or tap to remove tasks
+- **Filter View** — switch between All, Pending, and Completed tasks
+- **Progress Bar** — live visual progress of your day
+- **Summary Strip** — at-a-glance count of pending, done, and total tasks
+- **Stats Overview** — completion ring and task breakdown on the Stats tab
+- **Sort Order** — sort tasks by newest or oldest from Settings
+- **Clear All** — wipe all tasks with a two-tap confirm safety check
+- **Persistent Storage** — tasks survive app restarts and phone reboots via AsyncStorage
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## Tech Stack
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+| Layer | Technology |
+|---|---|
+| Framework | React Native |
+| Platform | Expo (SDK 51+) |
+| Navigation | Expo Router (file-based tabs) |
+| Storage | AsyncStorage |
+| State | React Context API |
+| Icons | Expo Vector Icons (Ionicons) |
+| Gradient | expo-linear-gradient |
+| Language | TypeScript |
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## Project Structure
 
-When you're ready, run:
+```
+app/
+  (tabs)/
+    _layout.tsx       # Tab navigation, Context, AsyncStorage, Task type
+    today.tsx         # Main screen — add, toggle, delete, filter tasks
+    stats.tsx         # Overview — completion ring and task breakdown
+    settings.tsx      # Sort order, clear tasks, about
 
-```bash
-npm run reset-project
+assets/
+  images/
+    icon.jpg          # App icon (1024x1024)
+
+components/
+  Spacer.tsx          # Reusable spacer component
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-### Other setup steps
+## Getting Started
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+### Prerequisites
 
-## Learn more
+- Node.js 18+
+- Expo CLI
+- Android Studio or Xcode (for device simulators)
 
-To learn more about developing your project with Expo, look at the following resources:
+### Installation
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+# Clone the repository
+git clone https://github.com/Ricsie11/Motion-app.git
 
-## Join the community
+# Navigate into the project
+cd Motion-app
 
-Join our community of developers creating universal apps.
+# Install dependencies
+npm install
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+# Start the development server
+npx expo start
+```
+
+### Run on Device
+
+```bash
+# Android
+npx expo run:android
+
+# iOS
+npx expo run:ios
+
+# Expo Go (scan QR)
+npx expo start
+```
+
+---
+
+## Dependencies
+
+```bash
+npx expo install \
+  expo-router \
+  expo-linear-gradient \
+  expo-image \
+  expo-splash-screen \
+  @react-native-async-storage/async-storage \
+  react-native-safe-area-context \
+  @expo/vector-icons
+```
+
+---
+
+## Color Palette
+
+| Name | Hex | Used For |
+|---|---|---|
+| Deep Walnut | `#1A1209` | Splash background, app icon |
+| Dark Brown | `#2D1F14` | Primary text, buttons, active chips |
+| Amber | `#C9943A` | Pending tasks, progress ring, accent |
+| Warm Cream | `#F5EFE6` | Screen backgrounds |
+| Cream Dark | `#EDE5D8` | Input fields, summary pills |
+| Forest Green | `#4A7C59` | Completed tasks, progress fill |
+| Muted Brown | `#8A7060` | Labels, subtitles, placeholders |
+
+---
+
+## App Configuration
+
+```json
+{
+  "expo": {
+    "name": "DailyTask",
+    "slug": "DailyTask",
+    "version": "1.0.0",
+    "icon": "./assets/images/icon.jpg",
+    "splash": {
+      "backgroundColor": "#1A1209"
+    }
+  }
+}
+```
+
+---
+
+## Task Data Model
+
+```ts
+type Task = {
+  id: string;           // unique timestamp-based ID
+  text: string;         // task content
+  completed: boolean;   // completion status
+  createdAt: string;    // ISO date string
+  reminder: string | null; // ISO date string or null
+};
+```
+
+---
+
+## Roadmap
+
+- [ ] Due date picker per task
+- [ ] Weekly stats history
+- [ ] Dark mode support
+- [ ] Task categories / tags
+- [ ] Swipe to delete gesture
+
+---
+
+## Developer
+
+Built by Group 2 StandAlone Team 
+
+---
+
+## License
+
+MIT License — free to use, modify, and distribute.

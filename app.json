@@ -15,7 +15,8 @@
         "backgroundColor": "#1A1209",
         "foregroundImage": "./assets/images/icon.jpg"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.ricsie.DailyTask"
     },
     "web": {
       "output": "static"
@@ -37,6 +38,13 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "1dab7a47-a9fd-41d3-bec1-b586f05dc5d0"
+      }
+    },
+    "owner": "ricsie"
   }
 }
