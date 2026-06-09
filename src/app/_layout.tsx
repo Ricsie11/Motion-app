@@ -8,11 +8,11 @@ type Props = {
 
 export default function RootLayout({ backgroundColor = "#b49566" }: Props) {
   return (
-  
     <SafeAreaProvider style={{ flex: 1, backgroundColor }}>
-      <StatusBar style="light" /> 
+      <StatusBar style="light" />
       <Stack screenOptions={{ contentStyle: { backgroundColor } }}>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="index" options={{ headerShown: false }} />
       </Stack>
     </SafeAreaProvider>
   );
