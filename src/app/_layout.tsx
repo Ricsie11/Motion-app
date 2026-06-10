@@ -1,15 +1,19 @@
 import { Stack } from "expo-router";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
+import { NavigationBar } from "expo-navigation-bar"
+
 
 type Props = {
   backgroundColor?: string;
 };
 
 export default function RootLayout({ backgroundColor = "#b49566" }: Props) {
+
   return (
     <SafeAreaProvider style={{ flex: 1, backgroundColor }}>
-      <StatusBar style="light" />
+      <StatusBar style="dark" />
+       <NavigationBar hidden={true} behavior="overlay-swipe" />
       <Stack screenOptions={{ contentStyle: { backgroundColor } }}>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="index" options={{ headerShown: false }} />
